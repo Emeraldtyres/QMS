@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QMS - Quality Management System</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        embed {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Quality Management System (QMS)</h1>
+    </header>
+
+    <section id="quality-policy-section" class="pdf-section" onclick="loadPDF('quality_policy.pdf')">
+        <h2>Quality Policy</h2>
+    </section>
+
+    <section id="quality-system-manual-section" class="pdf-section" onclick="loadPDF('quality_system_manual.pdf')">
+        <h2>Quality System Manual</h2>
+    </section>
+
+    <section id="quality-procedure-section" class="pdf-section" onclick="loadPDF('quality_procedure.pdf')">
+        <h2>Quality Procedure</h2>
+    </section>
+
+    <section id="risk-management-procedure-section" class="pdf-section" onclick="loadPDF('risk_management_procedure.pdf')">
+        <h2>Risk Management Procedure</h2>
+    </section>
+
+    <section id="organization-structure-section" class="pdf-section" onclick="loadPDF('organization_structure.pdf')">
+        <h2>Organisation Structure</h2>
+    </section>
+
+    <section id="quality-objectives-section" class="pdf-section" onclick="loadPDF('quality_objectives.pdf')">
+        <h2>Quality Objectives</h2>
+    </section>
+
+    <section id="internal-quality-audit-section" class="pdf-section" onclick="loadPDF('internal_quality_audit.pdf')">
+        <h2>Internal Quality Audit (IQA)</h2>
+    </section>
+
+    <script>
+        function loadPDF(pdfFile) {
+            const embedElement = document.createElement('embed');
+            embedElement.src = pdfFile;
+            document.getElementById('pdf-container').innerHTML = '';
+            document.getElementById('pdf-container').appendChild(embedElement);
+        }
+    </script>
+
+    <div id="pdf-container"></div>
+
+</body>
+</html>
