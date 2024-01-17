@@ -26,7 +26,7 @@
         }
 
         section {
-            background-color:#228B22; /* green for the section background */
+            background-color: #228B22; /* Green for the section background */
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -34,10 +34,34 @@
             transition: background-color 0.3s;
             cursor: pointer;
             text-align: center; /* Center the subheadings */
+            position: relative;
         }
 
         section:hover {
-            background-color:#006400; /* Darker green on hover */
+            background-color: #006400; /* Darker green on hover */
+        }
+
+        .pdf-dropdown {
+            display: none;
+            position: absolute;
+            background-color: #228B22; /* Green for the dropdown background */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            z-index: 1;
+            text-align: left;
+            width: 200px;
+        }
+
+        section:hover .pdf-dropdown {
+            display: block;
+        }
+
+        .pdf-dropdown a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 0;
         }
 
         embed {
@@ -62,33 +86,25 @@
         <h1>Quality Management System (QMS)</h1>
     </header>
 
-    <section id="quality-policy-section" class="pdf-section" onclick="loadPDF('quality_policy.pdf')">
+    <section id="quality-policy-section" class="pdf-section">
         <h2>Quality Policy</h2>
+        <div class="pdf-dropdown">
+            <a href="#" onclick="loadPDF('quality_policy_subtopic1.pdf')">Subtopic 1</a>
+            <a href="#" onclick="loadPDF('quality_policy_subtopic2.pdf')">Subtopic 2</a>
+            <!-- Add more subtopics as needed -->
+        </div>
     </section>
 
-    <section id="quality-system-manual-section" class="pdf-section" onclick="loadPDF('quality_system_manual.pdf')">
+    <section id="quality-system-manual-section" class="pdf-section">
         <h2>Quality System Manual</h2>
+        <div class="pdf-dropdown">
+            <a href="#" onclick="loadPDF('quality_system_manual_subtopic1.pdf')">Subtopic 1</a>
+            <a href="#" onclick="loadPDF('quality_system_manual_subtopic2.pdf')">Subtopic 2</a>
+            <!-- Add more subtopics as needed -->
+        </div>
     </section>
 
-    <section id="quality-procedure-section" class="pdf-section" onclick="loadPDF('quality_procedure.pdf')">
-        <h2>Quality Procedure</h2>
-    </section>
-
-    <section id="risk-management-procedure-section" class="pdf-section" onclick="loadPDF('risk_management_procedure.pdf')">
-        <h2>Risk Management Procedure</h2>
-    </section>
-
-    <section id="organization-structure-section" class="pdf-section" onclick="loadPDF('organization_structure.pdf')">
-        <h2>Organisation Structure</h2>
-    </section>
-
-    <section id="quality-objectives-section" class="pdf-section" onclick="loadPDF('quality_objectives.pdf')">
-        <h2>Quality Objectives</h2>
-    </section>
-
-    <section id="internal-quality-audit-section" class="pdf-section" onclick="loadPDF('internal_quality_audit.pdf')">
-        <h2>Internal Quality Audit (IQA)</h2>
-    </section>
+    <!-- Add similar dropdown structures for other sections -->
 
     <script>
         function loadPDF(pdfFile) {
