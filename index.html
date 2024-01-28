@@ -98,20 +98,20 @@
         <h1>Quality Management System (QMS)</h1>
     </header>
 
-    <section id="quality-policy-section" class="pdf-section">
+    <section id="quality-policy-section" class="pdf-section" id="qp-qa-6-msa">
         <h2>Quality Policy</h2>
         <div class="pdf-dropdown">
-            <a href="#" onclick="loadPDF('QP-QA-6 -MSA.pdf')">QP-QA-6 -MSA</a>
-            <a href="#" onclick="loadPDF('QPM - Design control.pdf')">QPM - Design control</a>
-            <a href="#" onclick="loadPDF('QPM - HR & Personal.pdf')">QPM - HR & Personal</a>
-            <a href="#" onclick="loadPDF('QPM - Index.pdf')">QPM - Index</a>
-            <a href="#" onclick="loadPDF('QPM - Maintenance.pdf')">QPM - Maintenance</a>
-            <a href="#" onclick="loadPDF('QPM - Marketing.pdf')">QPM - Marketing</a>
-            <a href="#" onclick="loadPDF('QPM - Production.pdf')">QPM - Production</a>
-            <a href="#" onclick="loadPDF('QPM - Purchase.pdf')">QPM - Purchase</a>
-            <a href="#" onclick="loadPDF('QPM - QA.pdf')">QPM - QA</a>
-            <a href="#" onclick="loadPDF('QPM - Revision history.pdf')">QPM - Revision history</a>
-            <a href="#" onclick="loadPDF('QPM - Stores.pdf')">QPM - Stores</a>
+            <a href="#qp-qa-6-msa" onclick="loadPDF('QP-QA-6 -MSA.pdf', 'qp-qa-6-msa')">QP-QA-6 -MSA</a>
+            <a href="#" onclick="loadPDF('QPM - Design control.pdf', 'qpm-design-control')">QPM - Design control</a>
+            <a href="#" onclick="loadPDF('QPM - HR & Personal.pdf', 'qpm-hr-personal')">QPM - HR & Personal</a>
+            <a href="#" onclick="loadPDF('QPM - Index.pdf', 'qpm-index')">QPM - Index</a>
+            <a href="#" onclick="loadPDF('QPM - Maintenance.pdf', 'qpm-maintenance')">QPM - Maintenance</a>
+            <a href="#" onclick="loadPDF('QPM - Marketing.pdf', 'qpm-marketing')">QPM - Marketing</a>
+            <a href="#" onclick="loadPDF('QPM - Production.pdf', 'qpm-production')">QPM - Production</a>
+            <a href="#" onclick="loadPDF('QPM - Purchase.pdf', 'qpm-purchase')">QPM - Purchase</a>
+            <a href="#" onclick="loadPDF('QPM - QA.pdf', 'qpm-qa')">QPM - QA</a>
+            <a href="#" onclick="loadPDF('QPM - Revision history.pdf', 'qpm-revision-history')">QPM - Revision history</a>
+            <a href="#" onclick="loadPDF('QPM - Stores.pdf', 'qpm-stores')">QPM - Stores</a>
             <!-- Add more subtopics as needed -->
         </div>
     </section>
@@ -119,17 +119,20 @@
     <div class="pdf-viewer"></div>
 
     <script>
-        function loadPDF(pdfFile) {
+        function loadPDF(pdfFile, targetId) {
             const iframeElement = document.createElement('iframe');
             iframeElement.src = pdfFile;
             iframeElement.scrolling = "yes";
             document.querySelector('.pdf-viewer').innerHTML = '';
             document.querySelector('.pdf-viewer').appendChild(iframeElement);
             document.querySelector('section').style.width = 'calc(100% - 400px)';
+            if (targetId) {
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
         }
     </script>
 
-    <!-- Add similar dropdown structures for other sections -->
-
-</body>
-</html>
+    <!-- Add similar dropdown structures for other sections
